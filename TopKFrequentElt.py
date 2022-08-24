@@ -8,4 +8,7 @@ class Solution(object):
             else:
                 heapq.heappush(result,(count,val))
                 heapq.heappop(result)
-        return [val for count, val in result]
+        l=[]
+        for count, val in result:
+                l.append(val)
+        return l
