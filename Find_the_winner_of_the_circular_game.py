@@ -7,7 +7,7 @@ class Solution(object):
             if len(li) == 1:
                 return li[0]
             index = (index + k)% len(li)
-            del li[index]
+            li.pop(index)
             return cal(k,index)
         return cal(k,index)
         """
