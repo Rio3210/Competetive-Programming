@@ -3,6 +3,25 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+
+#solution one easy and fast
+class Solution(object):
+    def sortList(self, head):
+		if not head:
+			return None
+		myList=[]
+		while head:
+			myList.append(head.val)
+			head=head.next
+		myList.sort()
+		newHead=point=ListNode(0)
+		for i in range(len(myList)):
+			point.next=ListNode(myList[i])
+			point=point.next
+		return newHead.next
+        
+#solution2
+#Using merge sort
 class Solution(object):
     def merge(self, l1, l2):
         res = None
