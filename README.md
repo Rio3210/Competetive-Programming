@@ -1,2 +1,2 @@
 # Competetive-Programming
-Solved Problems 
+Solved Problems form the community Progress sheet.
