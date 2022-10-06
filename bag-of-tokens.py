@@ -5,20 +5,20 @@ class Solution(object):
             return 0
         up, down = 0, len(tokens) - 1
 		
-        maxScore, curScore = 0, 0
+        maxval, curval = 0, 0
         
         while up <= down:
             if tokens[up] <= power:
                 power -= tokens[up]
-                curScore += 1
+                curval += 1
                 up += 1
             else:
                 power += tokens[down]
-                curScore -= 1
+                curval -= 1
                 down -= 1
-            maxScore = max(maxScore, curScore)
+            maxval = max(maxval, curval)
         
-        return maxScore
+        return maxval
         """
         :type tokens: List[int]
         :type power: int
