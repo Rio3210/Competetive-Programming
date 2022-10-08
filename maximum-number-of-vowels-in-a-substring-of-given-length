@@ -1,0 +1,27 @@
+class Solution(object):
+    def maxVowels(self, s, k):
+        
+        vowels=['a','e','i','o','u']
+        ans = 0
+        v = 0
+        for char in range(k):
+            
+            if s[char] in vowels:
+                v+=1
+        ans=max(ans,v)
+        for char in range(len(s)-k):
+            if s[char] in vowels:
+                v-=1
+            if s[char+k] in vowels:
+                v+=1
+            ans=max(ans,v)
+        return ans
+                
+                
+                
+        """
+        :type s: str
+        :type k: int
+        :rtype: int
+        """
+        
