@@ -18,17 +18,16 @@ class Solution:
     
 #         return helper(root,p,q)
     
-        temp=root
-        while temp:
-            if temp == p:
+        while root:
+            if root == p:
                 return p
-            if temp == q:
+            if root == q:
                 return q
-            if temp.val>p.val and temp.val>q.val:
-                temp=temp.left
-            elif temp.val<p.val and temp.val<q.val:
-                temp=temp.right
+            if root.val>p.val and root.val>q.val:
+                root=root.left
+            elif root.val<p.val and root.val<q.val:
+                root=root.right
             else:
-                return temp
+                return root
             
                 
