@@ -8,7 +8,7 @@ class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         def helper(root): 
             if not root:
-                return[] 
+                return [] 
             return (helper(root.left) 
             + [root.val] + helper(root.right))
         return helper(root)[k-1]
