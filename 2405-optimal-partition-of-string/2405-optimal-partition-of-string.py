@@ -5,7 +5,7 @@ class Solution:
         n=len(s)
         for j in range(n):
             if s[j] in container:
-                container={}
+                container.clear()
                 count+=1
                 container[s[j]]=j
             else:
