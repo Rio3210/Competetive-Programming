@@ -3,7 +3,7 @@ class Solution:
         stack=[]
         n=len(matrix)
         for i in range(n):
-            stack=stack + matrix[i]
+            stack.extend(matrix[i])
         stack.sort()
-        print(stack)
+        # print(stack)
         return stack[k-1]
