@@ -2,7 +2,7 @@ class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         ans = []
         def helper(s, opening, closing):
-            if len(s) == 2 * n:
+            if opening==closing==n:
                 ans.append(s)  
                 return
             if opening < n:
