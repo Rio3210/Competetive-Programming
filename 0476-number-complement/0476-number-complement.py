@@ -1,6 +1,6 @@
 class Solution:
     def findComplement(self, num: int) -> int:
-        mask_len=len(bin(num))-2
-        mask=int("1"*mask_len,2)
-        return mask^num
+        l=len(bin(num))-2
+        gen=int("1"*l,2)
+        return gen^num
             
