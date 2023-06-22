@@ -20,7 +20,7 @@ class Solution:
             
             for vertex in graph[node]:
                 ans[vertex].add(node)
-                ans[vertex]= ans[vertex] | ans[node]
+                ans[vertex].update(ans[node])
                 indegree[vertex]-=1
                 if not indegree[vertex]:
                     dq.append(vertex)
