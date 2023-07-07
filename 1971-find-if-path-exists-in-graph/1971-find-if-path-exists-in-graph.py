@@ -3,11 +3,13 @@ class Solution:
         parent=[i for i in range(n)]
         
         def find(x):
-            if parent[x]!=x:
-                parent[x]=find(parent[x])
-            return parent[x]
+            if parent[x]==x:
+                return x
+            return find(parent[x])
         
         for u,v in edges:
             parent[find(u)]=find(v)
             
         return find(source)==find(destination)
+    
+    
