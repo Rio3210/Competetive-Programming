@@ -22,13 +22,13 @@ class Solution:
                 union(account[1], email)
 
         # print(parent)
-        merged_accounts = defaultdict(list)
+        merged_acc = defaultdict(list)
         for email in parent:
-            merged_accounts[find(email)].append(email)
-        # print(merged_accounts)
+            merged_acc[find(email)].append(email)
+        print(merged_acc)
         
         ans = []
-        for emails in merged_accounts.values():
+        for emails in merged_acc.values():
             name = email_to_name[emails[0]]
             ans.append([name] + sorted(emails))
         
