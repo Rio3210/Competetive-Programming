@@ -6,7 +6,11 @@ class Solution:
             for j in coins:
                 if i-j>=0:
                     dp[i]=min(dp[i],dp[i-j]+1)
-        return dp[amount] if dp[amount]!=float('inf') else -1
+        if dp[amount]==float('inf'):
+            return -1
+        else:
+            return dp[amount]
+        
         
         
 #         #error not works
