@@ -2,18 +2,30 @@ class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         if not matrix:
             return False
-        m, n = len(matrix), len(matrix[0])
-        left, right = 0, m * n - 1
-
-        while left <= right:
-            mid = (left + right) // 2
-            mid_row, mid_col = divmod(mid, n)
-
-            if matrix[mid_row][mid_col] == target:
+        def binaryserach(nums):
+            low=0
+            high=len(nums)-1
+            while low<=high:
+                mid=(low+high)//2
+                if nums[mid]==target:
+                    return mid
+                if nums[mid]>target:
+                    high=mid-1
+                else:
+                    low=mid+1
+            return -1
+        row=len(matrix)
+        ans=-1
+        for i in range(row):
+            print(i)
+            if matrix[i][-1]==target:
                 return True
-            elif matrix[mid_row][mid_col] < target:
-                left = mid + 1
-            else:
-                right = mid - 1
+            elif matrix[i][-1]>target:
+                ans=binaryserach(matrix[i])
+                break
 
-        return False
+        if ans!=-1:
+            return True
+        else:
+            return False
+                
