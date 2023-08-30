@@ -13,7 +13,7 @@ class Solution:
             left = 0
             right = 0
             while right < len(indices):
-                if (indices[right] - indices[left]) - (right - left) > k:
+                if (indices[right] - indices[left]) - (right - left) > k: #check this part again ?Sura
                     left += 1
                 maxLength = max(maxLength, right - left + 1)
                 right += 1
